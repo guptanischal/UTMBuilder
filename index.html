@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UTM Builder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body>
+    <div class="container mb-3">
+        <nav style="background-color: #6a5acd;" class="navbar border-bottom border-body navbar-expand-lg sticky-top" data-bs-theme="dark" >
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+              <img width="130px" height="70px"src="data:image/jpeg;base64,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">
+            </a>
+          </div> 
+          
+          <div class="container-fluid">
+              <a class="navbar-brand" href="#">UTM SMART BUILDER</a>
+          
+            </div>
+          </nav>
+
+          <div class="row my-3">
+              <div class="col">
+                <form class="needs-validation" novalidate>
+                    <!-- <div class="mb-3">
+                      <label for="web-url" class="form-label">Website URL *</label>
+                      <input type="text" class="form-control custom-badges" id="web-url" aria-describedby="emailHelp" placeholder=""onkeyup="validate()">
+                      <div class="valid-feedback">
+                        Looks good!
+                      </div>
+                    </div> -->
+                    <div class="form__group field">
+                      <input type="text" class="form__field" placeholder="Name" onkeyup="validate()" id='web-url' required />
+                      <label for="web-url" class="form__label">Website URL *</label>
+                
+                    </div>
+
+                    <div class="row g-2">
+                      <!-- <div class="mb-3 col-6">
+                        <label for="utm-source" class="form-label">UTM SOURCE *</label>
+                        <input type="text" class="form-control custom-badges" id="utm-source" placeholder="e.g. newsletter, twitter, google, etc."onkeyup="validate()">
+                        <div class="valid-feedback">
+                          Looks good!
+                        </div> -->
+                       <div class="mb-3 col-6">
+                        <div class="form__group field mb-3 col-6">
+                          <input type="text" class="form__field" placeholder="e.g. newsletter, twitter, google, etc." onkeyup="validate()" id='utm-source' required />
+                          <label for="utm-source" class="form__label">Website Source *</label>
+                        </div>
+                      </div>
+                       
+
+
+                        <div class="mb-3 col-6">
+                          <!-- <label for="utm-medium" class="form-label">UTM MEDIUM *</label  >
+                          <input type="text" class="form-control custom-badges" id="utm-medium" placeholder="e.g. email, social, cpc, etc."onkeyup="validate()">
+                          <div class="valid-feedback">
+                            Looks good! -->
+                            <div class="form__group field">
+                              <input type="text" class="form__field" placeholder="Name" onkeyup="validate()" id='utm-medium' required />
+                              <label for="utm-medium" class="form__label">UTM Medium *</label>
+                            </div>
+                          </div>
+                        
+                    </div>
+                    <div class="row g-2">
+                      <div class="mb-3 col-4">
+                        <div class="form__group field">
+                          <input type="text" class="form__field" placeholder="Name" onkeyup="validate()" id='utm-campaign' required />
+                          <label for="utm-campaign" class="form__label">UTM Campaign *</label>
+                        </div>
+                      </div>
+
+                      <div class="mb-3 col-4">
+                        <div class="form__group field">
+                          <input type="text" class="form__field" placeholder="Name" onkeyup="validate()" id='utm-content' required />
+                          <label for="utm-content" class="form__label">UTM Content</label>
+                        </div>
+                      </div>
+
+                      <div class="mb-3 col-4">
+                        <div class="form__group field">
+                          <input type="text" class="form__field" placeholder="Name" onkeyup="validate()" id='utm-term' required />
+                          <label for="utm-term" class="form__label">UTM Term</label>
+                        </div>
+                      </div>
+                    </div>
+                  
+              
+                    <div class="my-3 py-2 border-bottom border-dark">
+                        <h6>GENERATED UTM TRACKING URL</h6>        
+                    </div>
+                    <div class="text-area">
+                        <textarea class="form-control" placeholder="" id="utm-textarea"></textarea>
+                    </div>
+                  </form>
+                  <button type="submit" class="btn btn-primary my-3" id="copyButton">Copy URL</button>
+              </div>
+              
+          </div>
+
+    </div>
+    
+    <script>
+    
+    document.getElementById("copyButton").addEventListener("click", function() {
+  // Get the text from the textarea
+    var text = document.getElementById("utm-textarea").value;
+    
+
+    var dummyTextArea = document.createElement("textarea");
+    document.body.appendChild(dummyTextArea);
+    dummyTextArea.value = text;
+    dummyTextArea.select();
+    document.execCommand("copy");
+    if(dummyTextArea.value===""){
+      Swal.fire({
+      position: 'center',
+      icon: 'error',
+      title: 'Please fill all mandatory fields',
+      showConfirmButton: false,
+      timer: 1000
+    })
+    }else{
+      Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Copied to Clipboard',
+      showConfirmButton: false,
+      timer: 1000
+    })
+    }
+    document.body.removeChild(dummyTextArea);
+
+});
+      </script>
+
+    <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
+  </body>
+</html>
